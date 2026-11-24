@@ -1,0 +1,2 @@
+model_id,n_reached,n_valid,n_truncated,n_warmed_up,mean_warmed_up_seconds,total_model_load_seconds,truncation_rate
+Qwen/Qwen2.5-1.5B-Instruct,2,2,0,0,,4.6725204000249505,0.0

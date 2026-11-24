@@ -1,0 +1,12 @@
+.venv/
+.uv-cache/
+.hf-cache/
+.llama-cpp/
+.local-deps/
+.matplotlib-cache/
+__pycache__/
+.run.lock
+runs/
+*.pdf
+experiment-plan.md
+

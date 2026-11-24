@@ -1,0 +1,37 @@
+split: main
+passages_per_group: 8
+prompt: >-
+  Rewrite the passage in your own words. Keep its meaning and specific details,
+  including names, numbers, and qualifiers. Return only the rewritten passage.
+max_new_tokens: 256
+models:
+  qwen:
+    id: Qwen/Qwen2.5-1.5B-Instruct
+    revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306
+  smollm:
+    id: HuggingFaceTB/SmolLM2-1.7B-Instruct
+    revision: 31b70e2e869a7173562077fd711b654946d38674
+schedules:
+  qwen_only:
+    label: Qwen only
+    rounds: 16
+    models: [qwen]
+  smollm_only:
+    label: SmolLM2 only
+    rounds: 16
+    models: [smollm]
+  alternate_qwen_first:
+    label: Alternate, Qwen first
+    rounds: 16
+    models: [qwen, smollm]
+  alternate_smollm_first:
+    label: Alternate, SmolLM2 first
+    rounds: 16
+    models: [smollm, qwen]
+encoder:
+  id: sentence-transformers/all-MiniLM-L6-v2
+  revision: 1110a243fdf4706b3f48f1d95db1a4f5529b4d41
+  max_tokens: 256
+annotations:
+  early_rounds: [1, 8]
+  early_passages: [main-01, main-05, main-10, main-14, main-19, main-23]

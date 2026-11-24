@@ -1,0 +1,7 @@
+split,passage_id,group,schedule,schedule_label,round,final_round,retention_checkpoint,status,stop_reason,model_id,unchanged,commentary,truncated,input_tokens,output_tokens,generation_seconds,model_load_seconds,warmup,word_count,original_word_count,length_ratio,encoder_tokens,original_encoder_tokens,similarity_status,similarity
+pilot,pilot-01,event,qwen_only,Qwen only,0,5,False,original,,,,,,,,,,,52,52,1.0,67,67,scored,1.0
+pilot,pilot-01,event,qwen_only,Qwen only,1,5,True,valid,,Qwen/Qwen2.5-1.5B-Instruct,False,False,False,125,73,25.91354209999554,2.4990803000400774,True,57,52,1.0961538461538463,73,67,scored,0.9781692028045654
+pilot,pilot-01,event,qwen_only,Qwen only,2,5,True,valid,,Qwen/Qwen2.5-1.5B-Instruct,False,False,False,131,73,25.85551350004971,2.173440099984873,True,57,52,1.0961538461538463,73,67,scored,0.9766256213188171
+pilot,pilot-01,event,qwen_only,Qwen only,3,5,False,pending,,,,,,,,,,,,52,,,67,no_valid_text,
+pilot,pilot-01,event,qwen_only,Qwen only,4,5,False,pending,,,,,,,,,,,,52,,,67,no_valid_text,
+pilot,pilot-01,event,qwen_only,Qwen only,5,5,True,pending,,,,,,,,,,,,52,,,67,no_valid_text,

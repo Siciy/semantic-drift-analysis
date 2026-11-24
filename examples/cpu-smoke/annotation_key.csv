@@ -1,0 +1,9 @@
+annotation_id,passage_id,schedule,round,claim_id
+1a3fc03a5431991f676f,pilot-01,qwen_only,1,c4
+6081370625b9fe2f22fc,pilot-01,qwen_only,2,c4
+621fc92b99faa6abc394,pilot-01,qwen_only,1,c2
+7b2c56a00ac0b311de37,pilot-01,qwen_only,2,c2
+7e0432e95ea1b62a3116,pilot-01,qwen_only,2,c3
+c0a78c4348463e922630,pilot-01,qwen_only,1,c1
+c6d830383d628cae5ac4,pilot-01,qwen_only,2,c1
+fbac7811bd0c78d41379,pilot-01,qwen_only,1,c3

@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "run_id": "cpu-smoke",
+  "created_at": "2026-11-24T15:39:43.259142+00:00",
+  "code_commit": null,
+  "design": {
+    "config_sha256": "b0f4c948fa845d1b06a5511da6e5170e8f6b8ae21fa5cad4413c19c8d06169aa",
+    "dataset_sha256": "bf063a3066dbfa44432a5294c8ad51dd924f0691912f2c7c84336122ab5fe8b1",
+    "config": {
+      "split": "pilot",
+      "passages_per_group": 2,
+      "prompt": "Rewrite the passage in your own words. Keep its meaning and specific details, including names, numbers, and qualifiers. Return only the rewritten passage.",
+      "max_new_tokens": 256,
+      "models": {
+        "qwen": {
+          "id": "Qwen/Qwen2.5-1.5B-Instruct",
+          "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+        },
+        "smollm": {
+          "id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+          "revision": "31b70e2e869a7173562077fd711b654946d38674"
+        }
+      },
+      "schedules": {
+        "qwen_only": {
+          "label": "Qwen only",
+          "rounds": 5,
+          "models": [
+            "qwen"
+          ]
+        },
+        "smollm_only": {
+          "label": "SmolLM2 only",
+          "rounds": 5,
+          "models": [
+            "smollm"
+          ]
+        },
+        "alternate_qwen_first": {
+          "label": "Alternate, Qwen first",
+          "rounds": 2,
+          "models": [
+            "qwen",
+            "smollm"
+          ],
+          "passages": [
+            "pilot-01"
+          ]
+        }
+      },
+      "encoder": {
+        "id": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "max_tokens": 256
+      },
+      "annotations": {
+        "early_rounds": [
+          1,
+          2
+        ],
+        "early_passages": [
+          "pilot-01",
+          "pilot-02",
+          "pilot-03",
+          "pilot-04",
+          "pilot-05",
+          "pilot-06"
+        ]
+      }
+    },
+    "passages": {
+      "pilot-01": {
+        "id": "pilot-01",
+        "split": "pilot",
+        "group": "event",
+        "text": "The Oak Street Library will hold a seed swap on Saturday, April 18, in its second-floor meeting room. Doors open at 10 a.m., and each visitor may take up to four packets. Bringing seeds is optional. Volunteers will have blank labels at the check-in table for anyone who brings unmarked packets.",
+        "claims": [
+          {
+            "id": "c1",
+            "text": "The seed swap takes place on Saturday, April 18."
+          },
+          {
+            "id": "c2",
+            "text": "Doors open at 10 a.m."
+          },
+          {
+            "id": "c3",
+            "text": "Each visitor can take at most four packets."
+          },
+          {
+            "id": "c4",
+            "text": "Visitors can participate without bringing seeds."
+          }
+        ]
+      }
+    },
+    "chains": {
+      "qwen_only": [
+        "pilot-01"
+      ]
+    },
+    "expected_chains": 1,
+    "expected_rewrites": 5
+  },
+  "runtime": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "device": "cpu",
+    "dtype": "torch.float32",
+    "cpu_threads": 8,
+    "gpu": null,
+    "cuda": null,
+    "packages": {
+      "torch": "2.10.0",
+      "transformers": "4.57.6",
+      "tokenizers": "0.22.2",
+      "huggingface-hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "sentence-transformers": "5.2.3",
+      "pandas": "2.3.3",
+      "matplotlib": "3.10.8",
+      "PyYAML": "6.0.3",
+      "filelock": "3.25.0"
+    }
+  },
+  "decoding": "greedy"
+}

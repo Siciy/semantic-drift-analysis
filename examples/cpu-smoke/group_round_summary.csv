@@ -1,0 +1,7 @@
+group,schedule,schedule_label,round,n_expected,n_reached,n_valid,n_invalid,n_blocked,n_pending,n_unchanged,n_commentary,n_truncated,n_encoder_limit,n_similarity,mean_similarity,n_length,mean_length_ratio
+event,qwen_only,Qwen only,0,1,1,1,0,0,0,0,0,0,0,1,1.0,1,1.0
+event,qwen_only,Qwen only,1,1,1,1,0,0,0,0,0,0,0,1,0.9781692028045654,1,1.0961538461538465
+event,qwen_only,Qwen only,2,1,1,1,0,0,0,0,0,0,0,1,0.9766256213188172,1,1.0961538461538465
+event,qwen_only,Qwen only,3,1,0,0,0,0,1,0,0,0,0,0,,0,
+event,qwen_only,Qwen only,4,1,0,0,0,0,1,0,0,0,0,0,,0,
+event,qwen_only,Qwen only,5,1,0,0,0,0,1,0,0,0,0,0,,0,
